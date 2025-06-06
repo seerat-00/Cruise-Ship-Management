@@ -1,71 +1,66 @@
 import React, { useEffect, useState } from 'react';
-import './ViewBookedFitnessCentre.css';
 import { db } from '../Firebase';
 import { collection, getDocs } from 'firebase/firestore';
+import './ViewBookedPartyHall.css';
 
-const ViewBookedFitnessCentre = () => {
-  // State to hold the list of fitness center bookings fetched from Firestore
+const ViewBookedPartyHalls = () => {
+  // State to hold the list of bookings fetched from Firestore
   const [bookings, setBookings] = useState([]);
-  // State to track loading status for user feedback
+  // State to track loading status while fetching data
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Async function to fetch bookings from Firestore
     const fetchBookings = async () => {
-      console.log('[ViewBookedFitnessCentre] Fetching bookings started...');
       try {
-        // Reference to the 'fitnessBookings' collection in Firestore
-        const bookingsRef = collection(db, 'fitnessBookings');
-        console.log('[ViewBookedFitnessCentre] Collection reference obtained.');
-
-        // Fetch all documents in the collection
+        console.log('Starting to fetch bookings from Firestore...');
+        // Reference to the 'bookings' collection in Firestore
+        const bookingsRef = collection(db, 'bookings');
+        // Get all documents from the collection
         const snapshot = await getDocs(bookingsRef);
-        console.log(`[ViewBookedFitnessCentre] Retrieved ${snapshot.size} bookings.`);
 
-        // Map documents to an array of booking objects with id and data
-        const bookingsList = snapshot.docs.map(doc => {
-          const data = doc.data();
-          console.log(`[ViewBookedFitnessCentre] Processing document ID: ${doc.id}`, data);
-          return {
-            id: doc.id,
-            ...data,
-          };
-        });
+        // Map over documents and create an array of booking objects
+        const bookingsList = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
 
-        // Update state with fetched bookings
+        console.log('Fetched bookings:', bookingsList);
+        // Update state with the fetched bookings
         setBookings(bookingsList);
-        console.log('[ViewBookedFitnessCentre] Bookings state updated.');
       } catch (error) {
-        // Log and alert if there is an error during fetch
-        console.error('[ViewBookedFitnessCentre] Error fetching bookings:', error);
+        // Log error details to the console for debugging
+        console.error('Error fetching bookings:', error);
+        // Alert user about the failure
         alert('Failed to fetch bookings. Please try again.');
       } finally {
-        // Always turn off loading spinner after attempt
+        // Regardless of success or failure, stop loading spinner
         setLoading(false);
-        console.log('[ViewBookedFitnessCentre] Loading finished.');
+        console.log('Finished fetching bookings.');
       }
     };
 
-    // Invoke fetch function on component mount
+    // Call the fetch function when the component mounts
     fetchBookings();
-  }, []);
+  }, []); // Empty dependency array means this runs once on mount
 
   return (
-    <div className="view-fitness-container">
-      <h1>Fitness Center</h1>
+    <div className="view-bookings-container">
+      <h1>Booked Party Halls</h1>
 
+      {/* Show loading message while fetching */}
       {loading ? (
-        // Show loading message while fetching data
         <p>Loading bookings...</p>
-      ) : bookings.length === 0 ? (
-        // Show message if no bookings are found
+      ) : 
+      // Show message if no bookings are found
+      bookings.length === 0 ? (
         <p>No bookings found.</p>
       ) : (
-        // Display bookings in a table if data is available
-        <table className="fitness-table">
+        // Render bookings in a table
+        <table className="bookings-table">
           <thead>
             <tr>
-              <th>Service</th>
+              <th>Hall Name</th>
               <th>Date</th>
               <th>Start Time</th>
               <th>End Time</th>
@@ -81,8 +76,8 @@ const ViewBookedFitnessCentre = () => {
                 <td>{startTime}</td>
                 <td>{endTime}</td>
                 <td>{quantity}</td>
-                {/* Defensive check for bookedAt */}
-                <td>{bookedAt ? new Date(bookedAt).toLocaleString() : 'N/A'}</td>
+                {/* Convert bookedAt timestamp to a readable format */}
+                <td>{new Date(bookedAt).toLocaleString()}</td>
               </tr>
             ))}
           </tbody>
@@ -92,4 +87,4 @@ const ViewBookedFitnessCentre = () => {
   );
 };
 
-export default ViewBookedFitnessCentre;
+export default ViewBookedPartyHalls;
