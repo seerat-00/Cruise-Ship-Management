@@ -1,0 +1,172 @@
+/* OrderCaterItems.css */
+
+:root {
+  --primary-blue: #1a73e8;
+  --primary-dark: #1558b0;
+  --bg-light: #f4f8fc;
+  --border-light: #cfe2ff;
+  --text-dark: #333;
+  --text-muted: #555;
+}
+
+.catering-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  min-height: 100vh;
+}
+
+.caterting-title {
+  text-align: center;
+  color: var(--primary-blue);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.catering-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.catering-card {
+  background-color: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.catering-card:hover {
+  transform: translateY(-4px);
+}
+
+.catering-icon {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.catering-card h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin: 0.5rem 0;
+}
+
+.catering-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.catering-card button {
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.catering-card button:hover {
+  background-color: var(--primary-dark);
+}
+
+.catering-cart {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.catering-cart h2 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.catering-cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.catering-cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.catering-cart li span {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.catering-cart-buttons button {
+  margin-left: 0.4rem;
+  background-color: #e0edff;
+  color: var(--primary-blue);
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.catering-cart-buttons button:hover {
+  background-color: #d0e2ff;
+}
+
+.catering-button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.catering-clear-button,
+.catering-order-button {
+  flex: 1;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.catering-clear-button:hover,
+.catering-order-button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .catering-cart li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .catering-button-group {
+    flex-direction: column;
+  }
+
+  .catering-clear-button,
+  .catering-order-button {
+    width: 100%;
+  }
+}

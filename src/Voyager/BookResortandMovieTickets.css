@@ -1,0 +1,335 @@
+:root {
+  --primary-blue: #1a73e8;
+  --primary-blue-dark: #1558b0;
+  --bg-light: #f0f8ff;
+  --card-bg: #fff;
+  --border-color: #d2e3fc;
+  --text-primary: #333;
+  --text-secondary: #555;
+  --btn-hover-bg: #cfe2ff;
+}
+
+/* Container */
+.resort-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  min-height: 100vh;
+}
+
+/* Title */
+.resort-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-blue);
+  margin-bottom: 2rem;
+}
+
+/* Form section */
+.resort-form {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.resort-form label {
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+}
+
+.resort-form input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.resort-form input:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+}
+
+/* Grid layout for items */
+.resort-booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Card styling */
+.resort-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.resort-card:hover,
+.resort-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(26, 115, 232, 0.3);
+  outline: none;
+}
+
+.resort-icon {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.6rem;
+}
+
+.resort-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.resort-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  min-height: 48px; /* to keep card height consistent */
+}
+
+.resort-card button {
+  background-color: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resort-card button:hover,
+.resort-card button:focus {
+  background-color: var(--primary-blue-dark);
+  outline: none;
+  box-shadow: 0 0 8px var(--primary-blue-dark);
+}
+
+/* Cart section */
+.resort-cart {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.resort-cart h2 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Booking list item */
+.resort-cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resort-cart-item span {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+/* Buttons group for qty */
+.resort-cart-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.resort-cart-buttons button {
+  background-color: #e3f2fd;
+  color: var(--primary-blue);
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.resort-cart-buttons button:hover,
+.resort-cart-buttons button:focus {
+  background-color: var(--btn-hover-bg);
+  outline: none;
+}
+
+/* Clear button style */
+.clear-button {
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.clear-button:hover,
+.clear-button:focus {
+  background-color: var(--primary-blue-dark);
+  outline: none;
+  box-shadow: 0 0 8px var(--primary-blue-dark);
+}
+
+/* Movie selection section */
+.movie-selection {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.movie-selection h2 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.movie-selection label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.movie-selection select {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.movie-selection select:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+}
+
+.movie-ticket-details p {
+  margin: 0.3rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.movie-ticket-details strong {
+  color: var(--text-primary);
+}
+
+.movie-ticket-details > div {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.movie-ticket-details button {
+  background-color: #e3f2fd;
+  color: var(--primary-blue);
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 36px;
+  line-height: 1;
+}
+
+.movie-ticket-details button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.movie-ticket-details button:hover:not(:disabled),
+.movie-ticket-details button:focus:not(:disabled) {
+  background-color: var(--btn-hover-bg);
+  outline: none;
+}
+
+/* Bottom buttons */
+.resort-button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.fitness-order-button {
+  flex: 1;
+  max-width: 300px;
+  background-color: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.fitness-order-button:hover,
+.fitness-order-button:focus {
+  background-color: var(--primary-blue-dark);
+  outline: none;
+  box-shadow: 0 0 10px var(--primary-blue-dark);
+}
+
+.clear-button {
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .resort-cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resort-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resort-button-group {
+    flex-direction: column;
+  }
+
+  .movie-ticket-details > div {
+    justify-content: flex-start;
+  }
+}
