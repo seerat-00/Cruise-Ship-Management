@@ -4,13 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 
 // Firebase project configuration object
 const firebaseConfig = {
-  apiKey: "AIzaSyBvXRlWdYGzYBHA8k1LNgBgTWNgttCQ7oY", 
-  authDomain: "cruise-ship-management-350b7.firebaseapp.com", 
-  projectId: "cruise-ship-management-350b7", 
-  storageBucket: "cruise-ship-management-350b7.firebasestorage.app", 
-  messagingSenderId: "696905296572", 
-  appId: "1:696905296572:web:7b528e71c48c14de3abeb9" 
-};
+  apiKey: "", 
+  authDomain: "", 
+  projectId: "", 
+  storageBucket: "", 
+  messagingSenderId: "", 
+  appId: "" 
+}; //empty for security reason
 
 // Initialize Firebase app with config object
 const app = initializeApp(firebaseConfig);
