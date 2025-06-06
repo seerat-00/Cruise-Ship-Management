@@ -288,7 +288,7 @@ function BookResortAndMovieTickets() {
             {resortCart.map(({ id, name, quantity }) => (
               <li key={id} className="resort-cart-item">
                 <span>{name} x ({quantity})</span>
-                <button onClick={() => removeFromResortCart(id)} aria-label={`Remove ${name} from booking`}>Remove</button>
+                <button className='clear-button' onClick={() => removeFromResortCart(id)} aria-label={`Remove ${name} from booking`}>Remove</button>
               </li>
             ))}
           </ul>
