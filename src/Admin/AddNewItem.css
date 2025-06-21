@@ -48,12 +48,31 @@
   background-color: #0056b3;
 }
 
+/* Base styles remain unchanged */
+
+/* Additional mobile responsiveness */
 @media (max-width: 600px) {
   .add-item-form {
     padding: 1rem;
+    margin: 1rem 1rem;
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 8px;
   }
 
   .form-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .form-input,
+  .form-select {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .form-button {
+    padding: 0.65rem;
+    font-size: 1rem;
   }
 }

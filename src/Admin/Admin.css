@@ -138,3 +138,39 @@
 .admin-handle button.bg-red-500:hover {
   background-color: #c53030;
 }
+
+@media (max-width: 600px) {
+  .admin-handle {
+    padding: 1rem;
+  }
+
+  .admin-handle form {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .admin-handle form h2 {
+    font-size: 1.2rem;
+  }
+
+  .admin-handle form input,
+  .admin-handle form select,
+  .admin-handle form button {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+
+  .admin-handle table {
+    font-size: 0.85rem;
+  }
+
+  .admin-handle th,
+  .admin-handle td {
+    padding: 0.5rem;
+  }
+
+  .admin-handle button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

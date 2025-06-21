@@ -14,6 +14,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+console.log("API Key:", process.env.REACT_APP_FIREBASE_API_KEY);
 console.log('Firebase app initialized:', app.name);
 
 const auth = getAuth(app);

@@ -78,3 +78,40 @@
  .nav-dropdown:hover .dropdown-menu {
    display: block;
 }
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-menu li a {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+}
